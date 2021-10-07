@@ -79,7 +79,7 @@ header {
     margin-top: .8em;
     cursor: pointer;
 }
-.form button:hover {
+.form input:focus, .form button:hover {
     background: var(--background-transparent-focus);
 }
 #imc-camp, #class-camp {
