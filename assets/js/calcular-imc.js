@@ -41,7 +41,7 @@ function classIMC(IMC) {
         return 'Peso normal. 😊';
     } else if (IMC <= 29.9) {
         return 'Acima do peso. 😖';
-    } else if (IMC <= 34,9) {
+    } else if (IMC <= 34.9) {
         return 'Obeso grau I. 😖';
     } else if (IMC <= 40) {
         return 'Obeso grau II. 😖';
