@@ -19,8 +19,6 @@ function CalcIMC() {
         errorReport('Você não é tão gordo assim!');
         throw Error('Você não é tão gordo assim!');
     }
-    
-    
     let IMC = peso / (altura * altura);
     IMC = IMC.toFixed(2);
     innerResult(IMC, classIMC(IMC));
@@ -73,5 +71,22 @@ function innerResult(imc, classifica) {
     let aguardar = setTimeout(() => {
         calc.classList.toggle('hidden');
         result.classList.toggle('hidden');
+        back(true);
     }, 1000);
+}
+function back(bool) {
+    let $back = document.getElementById('back');
+    let calc = document.querySelector('.calc');
+    let result = document.querySelector('.result');
+    let peso = document.getElementById('peso');
+    let altura = document.getElementById('altura');
+    if (bool) {
+        $back.classList.add('show');
+    } else {
+        $back.classList.remove('show');
+        calc.classList.toggle('hidden');
+        result.classList.toggle('hidden');
+        peso.value = '';
+        altura.value = '';
+    }
 }
