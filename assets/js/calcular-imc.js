@@ -73,5 +73,5 @@ function innerResult(imc, classifica) {
     let aguardar = setTimeout(() => {
         calc.classList.toggle('hidden');
         result.classList.toggle('hidden');
-    }, 500);
+    }, 1000);
 }
