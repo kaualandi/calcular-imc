@@ -16,8 +16,18 @@
 #errors {
     position: absolute;
     top: 2em;
-    width: fit-content;
+    width: 0;
     color: rgb(228, 87, 87);
+    padding: .5em;
+    background-color: var(--background-transparent);
+    border-radius: var(--border-radius);
+    transition: all .3s;
+    opacity: 0;
+    overflow: hidden;
+}
+#errors.show {
+    width: calc(250px - 1em);
+    opacity: 1;
 }
 .calc {
     transition: all .3s;

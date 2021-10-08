@@ -41,8 +41,10 @@ function classIMC(IMC) {
 function errorReport(error) {
     $errors = document.getElementById('errors');
     $errors.innerHTML = error;
+    $errors.classList.add('show');
     let sumir = setTimeout(() => {
         $errors.innerHTML = "";
+        $errors.classList.remove('show');
     }, 1500)
 }
 function innerResult(imc, classifica) {
