@@ -15,6 +15,11 @@ function CalcIMC() {
         errorReport('Você não é tão alto assim!');
         throw Error('Você não é tão alto assim!');
     }
+    if (peso > 452) {
+        errorReport('Você não é tão gordo assim!');
+        throw Error('Você não é tão gordo assim!');
+    }
+    
     
     let IMC = peso / (altura * altura);
     IMC = IMC.toFixed(2);
