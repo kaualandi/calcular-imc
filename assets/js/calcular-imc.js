@@ -7,6 +7,15 @@ function CalcIMC() {
         errorReport('Apenas números!');
         throw Error('A função deve receber apenas números');
     }
+    if (peso < 0 || altura < 0) {
+        errorReport('Apenas números positivos!');
+        throw Error('A função deve receber apenas números positivos');
+    }
+    if (altura > 2.72) {
+        errorReport('Você não é tão alto assim!');
+        throw Error('Você não é tão alto assim!');
+    }
+    
     let IMC = peso / (altura * altura);
     IMC = IMC.toFixed(2);
     innerResult(IMC, classIMC(IMC));

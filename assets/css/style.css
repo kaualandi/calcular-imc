@@ -16,18 +16,21 @@
 #errors {
     position: absolute;
     top: 2em;
-    width: 0;
+    /* width: 0; */
+    width: calc(250px - 1em);
     color: rgb(228, 87, 87);
     padding: .5em;
-    background-color: var(--background-transparent);
+    transform: translateY(-100px);
+    background-color: var(--background-transparent-focus);
     border-radius: var(--border-radius);
-    transition: all .3s;
+    transition: all .5s;
     opacity: 0;
     overflow: hidden;
+    word-break: keep-all;
 }
 #errors.show {
-    width: calc(250px - 1em);
     opacity: 1;
+    transform: translateY(0);
 }
 .calc {
     transition: all .3s;
