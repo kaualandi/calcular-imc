@@ -1,3 +1,4 @@
+let $download = document.getElementById('download');
 function CalcIMC() {
     peso = document.getElementById('peso');
     altura = document.getElementById('altura');
@@ -22,6 +23,13 @@ function CalcIMC() {
     let IMC = peso / (altura * altura);
     IMC = IMC.toFixed(2);
     innerResult(IMC, classIMC(IMC));
+    let timehtml2canvas = setTimeout(() => {
+        html2canvas(document.querySelector("html")).then(canvas => {
+            $download.href = canvas.toDataURL("image/png");
+            $download.download =  'seu imc';
+            $download.classList.add('show');
+        });
+    }, 1500);
 }
 function classIMC(IMC) {
     if (IMC == undefined) {
@@ -84,6 +92,7 @@ function back(bool) {
         $back.classList.add('show');
     } else {
         $back.classList.remove('show');
+        $download.classList.remove('show');
         calc.classList.toggle('hidden');
         result.classList.toggle('hidden');
         peso.value = '';
